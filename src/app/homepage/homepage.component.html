@@ -1,0 +1,14 @@
+<div *ngIf="!IsHomePage">
+    <app-add-employee></app-add-employee>
+</div>
+
+<div *ngIf="IsHomePage" class="card_body">
+    <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Welcome</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Happy Coding!!!</h6>
+          <p class="card-text">Please click the profile button to get starts with</p>
+          <a routerLink="/employee" class="card-link">Profile</a>
+        </div>
+      </div>
+</div>

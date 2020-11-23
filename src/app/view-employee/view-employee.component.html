@@ -1,0 +1,25 @@
+
+<div class="container">
+  <h5 style="margin-top: 25px;text-align:center">
+    {{title}}
+  </h5>
+  <!--<button type="button" (click)="Back()" class="btn btn-primary">
+    Back
+  </button>-->
+  <!-- <a routerLink="/employee" class="card-link">Back</a>-->
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-4"></div>
+    <div class="card-body col-md-4" style="margin-top:6em;margin-left:5em">
+      <img src="{{EmployeeDetails.Url}}" alt="Avatar" style="height:150px;width:150px;cursor:pointer;border-radius: 50%;">
+      <h5 class="card-title">{{EmployeeDetails.Name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">Age: {{EmployeeDetails.Age}} Years</h6>
+      <p class="card-text">Phone: {{EmployeeDetails.Phone}}</p>
+      <p class="card-text">Email: {{EmployeeDetails.Email}}</p>
+      <p class="card-text">Address: {{EmployeeDetails.Address}}</p>
+    </div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+<!--<div *ngIf="!IsViewPage">
+  <app-add-employee></app-add-employee>
+</div>-->

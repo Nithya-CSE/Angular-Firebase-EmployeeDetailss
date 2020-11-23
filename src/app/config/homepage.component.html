@@ -1,0 +1,8 @@
+<div *ngIf="!IsHomePage">
+    <app-add-profile></app-add-profile>
+</div>
+
+<div *ngIf="IsHomePage">
+    <p>Home Page </p>
+    <a routerLink="/profile">Profile</a>
+</div>

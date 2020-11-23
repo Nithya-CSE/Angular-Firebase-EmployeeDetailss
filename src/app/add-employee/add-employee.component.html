@@ -1,0 +1,58 @@
+<div *ngIf="!IsEmployeePage">
+  <app-view-employee></app-view-employee>
+</div>
+<div class="container" *ngIf="IsEmployeePage">
+  <h5 style="margin-top: 25px;">
+    {{title}}
+  </h5>
+  <!--Create Employee Details-->
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-3">
+      <input type="text" class="form-control" #Name maxlength="50" [(ngModel)]="employeeName" placeholder="Name">
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" #Age maxlength="2" [(ngModel)]="employeeAge" placeholder="Age" (keyup)="isNumber(this,'employeeAge')">
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" #Number maxlength="10" [(ngModel)]="employeePhone" placeholder="Phone" (keyup)="isNumber(this,'employeePhone')">
+    </div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" #EmailID maxlength="50" [(ngModel)]="employeeEmail" placeholder="Email" (focusout)="focusOutEmailValidate(this,'employeeEmail','EmailID')">
+    </div>
+  </div>
+  <div class="row" style="margin-top: 25px;">
+    <div class="col-md-3">
+      <input type="text" class="form-control" #Address maxlength="200" [(ngModel)]="employeeAddress" placeholder="Address">
+    </div>
+    <div class="col-md-3">
+      <div class="form-group col-12">
+        <input type="file" id="file" #userPhoto (change)="onFileSelected($event)" name="image" autocomplete="off" />
+      </div>
+    </div>
+    <div class="col-md-3">
+      <button type="button" (click)="CreateRecord()" class="btn btn-primary">
+        +
+        Create Employee
+      </button>
+    </div>
+  </div>
+  <form>
+    <agm-map style="height: 300px;" [latitude]="lat" [longitude]="lng" [zoom]="zoom" (mapClick)="mapClicked($event)">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </form>
+  <!--View Employee Details-->
+  <h5 style="margin-top: 25px;">
+    Employee List
+  </h5>
+  <div class="row" style="margin-top: 25px;">
+    <div class="card col-md-3" *ngFor="let item of employeeDetails">
+      <div class="card-body">
+        <h5 class="card-title" style="cursor:pointer" (click)="ViewRecord(item)">{{item.Name}}</h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

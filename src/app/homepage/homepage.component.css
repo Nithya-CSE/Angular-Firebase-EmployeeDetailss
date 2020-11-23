@@ -1,0 +1,12 @@
+.card_body{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 10px 40px rgba(0,0,0,.08);
+}
+
+.card{
+    width: 18rem;
+    border: 0px solid rgba(0,0,0,.125);
+}
